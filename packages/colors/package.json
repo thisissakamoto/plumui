@@ -1,6 +1,7 @@
 {
   "name": "@plumui/colors",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "A comprehensive color library that provides a collection of colors inspired by TailwindCSS v4, designed for modern web development. This library offers a wide range of color options, including standard colors, and extended shades for easy integration into your projects.",
   "type": "module",
   "publishConfig": {
     "access": "public"
