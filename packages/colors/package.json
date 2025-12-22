@@ -1,0 +1,39 @@
+{
+  "name": "@plumui/colors",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./*": {
+      "types": "./dist/types/*.d.ts",
+      "import": "./dist/esm/*.js",
+      "require": "./dist/cjs/*.js"
+    }
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.10",
+    "@types/bun": "latest",
+    "vite": "^7.2.6",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "scripts": {
+    "compile": "tsc",
+    "build": "vite build",
+    "lint": "biome lint .",
+    "prepublish": "bun run build",
+    "format": "biome format --write .",
+    "dev": "cd src/examples && bun run index.ts"
+  }
+}
