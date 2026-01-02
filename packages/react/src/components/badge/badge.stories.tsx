@@ -8,7 +8,19 @@ export default {
     visual: {
       control: { type: "select" },
       options: getVariants("visual").extendWith("soft", "surface", "outlined").values,
-    }
+    },
+    tone: {
+      control: { type: "select" },
+      options: getVariants("tone").values,
+    },
+    radius: {
+      control: { type: "select" },
+      options: getVariants("radius").values,
+    },
+    size: {
+      control: { type: "select" },
+      options: getVariants("size").values,
+    },
   },
   args: {
     size: "md",
