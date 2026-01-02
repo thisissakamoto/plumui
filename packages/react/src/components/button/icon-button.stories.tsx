@@ -1,9 +1,10 @@
 import type { Story, StoryDefault } from "@ladle/react";
 import { getVariants } from "@plumui/presets";
-import { Button, type ButtonProps } from ".";
+import { Icon } from "../icon";
+import { IconButton, type IconButtonProps } from ".";
 
 export default {
-  title: "Button",
+  title: "Icon Button",
   argTypes: {
     visual: {
       control: { type: "select" },
@@ -21,25 +22,23 @@ export default {
       control: { type: "select" },
       options: getVariants("size").values,
     },
-    wide: {
+    stretch: {
       control: { type: "boolean" },
-    },
-    children: {
-      control: { type: "text" },
     },
   },
   args: {
     size: "lg",
     tone: "blue",
-    wide: false,
+    stretch: false,
     radius: "full",
     visual: "filled",
-    children: "Join us",
   }
 } satisfies StoryDefault;
 
-export const Base: Story<ButtonProps> = (args) => {
+export const Base: Story<IconButtonProps> = (args) => {
   return (
-    <Button {...args} />
+    <IconButton {...args}>
+      <Icon icon="lucide:framer" />
+    </IconButton>
   )
 };

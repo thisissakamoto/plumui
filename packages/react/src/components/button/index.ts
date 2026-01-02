@@ -1,7 +1,3 @@
-export { Button, type ButtonProps, type ButtonRef } from "./button";
+export * from "./button";
 export * as ButtonGroup from "./button-group";
-export {
-  IconButton,
-  type IconButtonProps,
-  type IconButtonRef,
-} from "./icon-button";
+export * from "./icon-button";
