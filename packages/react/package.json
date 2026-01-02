@@ -1,47 +1,36 @@
 {
   "type": "module",
-  "name": "@lens-ui/react",
+  "version": "0.0.0",
+  "name": "@plumui/react",
   "main": "./dist/cjs/index.js",
+  "types": "dist/types/index.d.ts",
   "module": "./dist/esm/index.js",
-  "exports": {
-    ".": {
-      "types": "./dist/types/index.d.ts",
-      "require": "./dist/cjs/index.js",
-      "import": "./dist/esm/index.js"
-    },
-    "./types": {
-      "types": "./dist/types/types/index.d.ts",
-      "require": "./dist/cjs/types/index.js",
-      "import": "./dist/esm/types/index.js"
-    }
-  },
-  "files": [
-    "dist"
-  ],
   "devDependencies": {
     "@ark-ui/react": "^5.18.4",
+    "@iconify/react": "^6.0.2",
     "@ladle/react": "^5.0.3",
-    "@phosphor-icons/react": "^2.1.10",
-    "@types/bun": "^1.2.23",
-    "motion": "^12.23.24",
-    "react-hook-form": "^7.62.0",
-    "@lens-ui/config": "workspace:*"
+    "@pandacss/dev": "^1.4.3",
+    "@types/react": "^18.0.0 || ^19.0.0",
+    "@types/react-dom": "^18.0.0 || ^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0",
+    "vite": "^7.3.0",
+    "vite-plugin-dts": "^4.5.4"
   },
   "peerDependencies": {
-    "typescript": "^5",
-    "@pandacss/dev": "^1.4.3",
-    "@types/react": "^19.2.2",
     "react": "^18.0.0 || ^19.0.0",
-    "@types/react-dom": "^19.2.2",
     "react-dom": "^18.0.0 || ^19.0.0"
   },
   "scripts": {
-    "typecheck": "tsc --noEmit",
-    "build": "bun run build.ts",
-    "ladle": "ladle serve",
-    "ladle:build": "ladle build",
+    "dev": "ladle dev",
+    "build": "vite build",
     "prepare": "panda codegen",
-    "ladle:preview": "ladle preview",
-    "ladle:dev": "ladle dev"
+    "typecheck": "tsc --noEmit",
+    "predev": "bun run prepare"
+  },
+  "dependencies": {
+    "@plumui/styled": "workspace:*",
+    "@plumui/presets": "workspace:*",
+    "@heroui/scroll-shadow": "^2.3.19"
   }
 }
