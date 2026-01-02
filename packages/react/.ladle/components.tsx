@@ -1,9 +1,9 @@
 import "./ladle.css";
 import React from "react";
-import { Box } from "../src/components/box";
-import { Stack } from "../src/components/stack";
+import "@plumui/styled/styles.css";
 import type { GlobalProvider } from "@ladle/react";
 import { Container } from "../src/components/container";
+import { Stack } from "../src/components/stack";
 
 export const Provider: GlobalProvider = ({ children, globalState }) => {
   React.useEffect(() => {
@@ -15,12 +15,10 @@ export const Provider: GlobalProvider = ({ children, globalState }) => {
   }, [globalState.theme]);
 
   return (
-    <Box>
-      <Container maxWidth="40rem" minHeight="90vh" alignContent="center" py="4rem">
-        <Stack justify="center" items="center" axis="vertical">
-          {children}
-        </Stack>
-      </Container>
-    </Box>
+    <Container maxW="560px" py="40">
+      <Stack justify="center" items="center" minH="100dvh">
+        {children}
+      </Stack>
+    </Container>
   );
 };
