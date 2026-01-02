@@ -1,13 +1,11 @@
-import React from "react";
-import { jsx } from "react/jsx-runtime";
-import { Factory, factory } from "../factory";
+import * as IconifyIcon from "@iconify/react";
+import { styled } from "@plumui/styled/jsx";
+import type { ComponentProps } from "@plumui/styled/types";
 
-export type IconRef = React.ComponentRef<"svg">;
-export type IconProps = Factory.Props<"svg">;
-export const Icon = React.forwardRef<IconRef, IconProps>((props, ref) => {
-  return jsx(factory.svg, {
-    ...props,
-    ref,
-  });
-});
+export type IconProps = ComponentProps<typeof Icon>;
+export const Icon = styled(IconifyIcon.Icon);
 Icon.displayName = "Icon";
+
+export type InlineIconProps = ComponentProps<typeof InlineIcon>;
+export const InlineIcon = styled(IconifyIcon.Icon);
+InlineIcon.displayName = "InlineIcon";
