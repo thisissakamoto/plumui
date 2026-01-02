@@ -1,21 +1,8 @@
-import React from "react";
-import { jsx } from "react/jsx-runtime";
-import { splitProps } from "../../utils";
-import { cx } from "../../../.styled/css";
-import { type Factory, factory } from "../factory";
-import { input, type InputVariantProps } from "../../../.styled/recipes";
+import { ark } from '@ark-ui/react';
+import { styled } from '@plumui/styled/jsx';
+import { inputRecipe } from '@plumui/styled/recipes';
+import type { ComponentProps } from '@plumui/styled/types';
 
-export type InputRef = React.ComponentRef<"input">;
-export type InputProps = Factory.Props<"input", InputVariantProps>;
-export const Input = React.forwardRef<InputRef, InputProps>((props, ref) => {
-  const [recipeProps, inputProps] = splitProps(props, [
-    "size",
-    "visual",
-    "shape",
-  ]);
-
-  const className = cx(input(recipeProps), props.className);
-
-  return jsx(factory.input, { ...inputProps, ref, className });
-});
-Input.displayName = "Input";
+export type InputProps = ComponentProps<typeof Input>;
+export const Input = styled(ark.div, inputRecipe);
+Input.displayName = 'Input';

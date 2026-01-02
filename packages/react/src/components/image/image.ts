@@ -1,13 +1,8 @@
-import React from "react";
-import { jsx } from "react/jsx-runtime";
-import { splitProps } from "../../utils";
-import { type Factory, factory } from "../factory";
+import { ark } from '@ark-ui/react';
+import { styled } from '@plumui/styled/jsx';
+import { imageRecipe } from '@plumui/styled/recipes';
+import type { ComponentProps } from '@plumui/styled/types';
 
-export type ImageRef = React.ComponentRef<"img">;
-export type ImageProps = Factory.Props<"img", {}>;
-export const Image = React.forwardRef<ImageRef, ImageProps>((props, ref) => {
-  const [recipeProps, imageProps] = splitProps(props, []);
-
-  return jsx(factory.img, { ...imageProps, ref });
-});
-Image.displayName = "Image";
+export type ImageProps = ComponentProps<typeof Image>;
+export const Image = styled(ark.div, imageRecipe);
+Image.displayName = 'Image';

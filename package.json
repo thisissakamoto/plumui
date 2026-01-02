@@ -1,12 +1,7 @@
 {
-  "name": "lens-ui",
+  "name": "plumui",
   "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "check-types": "turbo run check-types"
-  },
+  "scripts": {},
   "devDependencies": {
     "@biomejs/biome": "^2.2.6",
     "typescript": "5.9.2"
@@ -14,7 +9,6 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "bun@1.2.18",
   "workspaces": [
     "apps/*",
     "packages/*"

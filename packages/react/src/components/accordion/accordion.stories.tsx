@@ -13,8 +13,9 @@ export const Base = () => (
       <Accordion.Item key={item.id} value={item.id}>
         <Accordion.ItemTrigger>
           {item.title}
-          <Accordion.ItemIndicator />
-          <Icon icon="lucide:cheveron-down" />
+          <Accordion.ItemIndicator>
+            <Icon icon="lucide:cheveron-down" />
+          </Accordion.ItemIndicator>
         </Accordion.ItemTrigger>
         <Accordion.ItemContent>
           {item.content}
@@ -39,10 +40,5 @@ const items = [
     id: "item-3",
     title: "Billing & Payments",
     content: "View your subscription plan, payment history, and update your payment method.",
-  },
-  {
-    id: "item-4",
-    title: "FAQ",
-    content: "Find answers to common questions about our services, features, and policies.",
   },
 ];
