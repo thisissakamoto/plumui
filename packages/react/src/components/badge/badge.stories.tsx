@@ -25,6 +25,7 @@ export default {
   args: {
     size: "md",
     tone: "blue",
+    radius: "full",
     children: "New",
     visual: "filled",
   }
