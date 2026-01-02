@@ -14,7 +14,7 @@ export const Base = () => (
         <Accordion.ItemTrigger>
           {item.title}
           <Accordion.ItemIndicator>
-            <Icon icon="lucide:cheveron-down" />
+            <Icon icon="lucide:chevron-down" />
           </Accordion.ItemIndicator>
         </Accordion.ItemTrigger>
         <Accordion.ItemContent>
