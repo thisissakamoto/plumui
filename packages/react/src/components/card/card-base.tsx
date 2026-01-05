@@ -101,15 +101,15 @@ export const Media = React.forwardRef<HTMLDivElement, MediaBaseProps>((props, re
   );
 });
 
-export type HeaderBaseProps = Assign<HTMLArkProps<"header">, {
+export type HeaderBaseProps = Assign<HTMLArkProps<"div">, {
   orientation?: "horizontal" | "vertical";
 }>;
-export const Header = React.forwardRef<HTMLElement, HeaderBaseProps>((props, ref) => {
+export const Header = React.forwardRef<HTMLDivElement, HeaderBaseProps>((props, ref) => {
   const { orientation, ...rest } = props;
   const { ids } = useCardContext();
 
   return (
-    <ark.header
+    <ark.div
       ref={ref}
       data-scope="card"
       data-part="header"
@@ -142,15 +142,15 @@ export const Body = React.forwardRef<HTMLDivElement, BodyBaseProps>((props, ref)
   );
 });
 
-export type FooterBaseProps = Assign<HTMLArkProps<"footer">, {
+export type FooterBaseProps = Assign<HTMLArkProps<"div">, {
   orientation?: "horizontal" | "vertical";
 }>;
-export const Footer = React.forwardRef<HTMLElement, FooterBaseProps>((props, ref) => {
+export const Footer = React.forwardRef<HTMLDivElement, FooterBaseProps>((props, ref) => {
   const { orientation, ...rest } = props;
   const { ids } = useCardContext();
 
   return (
-    <ark.footer
+    <ark.div
       ref={ref}
       data-scope="card"
       data-part="footer"
