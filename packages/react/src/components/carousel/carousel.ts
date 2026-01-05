@@ -1,7 +1,17 @@
-import { Carousel } from "@ark-ui/react/carousel";
+import type { UseCarouselContext, UseCarouselProps, UseCarouselReturn } from "@ark-ui/react/carousel";
+import { Carousel, useCarousel, useCarouselContext } from "@ark-ui/react/carousel";
 import { createStyleContext } from "@plumui/styled/jsx";
 import type { ComponentProps } from "@plumui/styled/types";
 import { carouselRecipe } from "packages/styled/dist/recipes";
+
+export const use = useCarousel;
+export const useContext = useCarouselContext;
+
+export type {
+  UseCarouselProps as UseProps,
+  UseCarouselReturn as UseReturn,
+  UseCarouselContext as UseContext,
+};
 
 const { withRootProvider, withProvider, withContext } = createStyleContext(carouselRecipe);
 
