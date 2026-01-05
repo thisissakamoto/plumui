@@ -4,5 +4,5 @@ import { inputRecipe } from '@plumui/styled/recipes';
 import type { ComponentProps } from '@plumui/styled/types';
 
 export type InputProps = ComponentProps<typeof Input>;
-export const Input = styled(ark.div, inputRecipe);
+export const Input = styled(ark.input, inputRecipe);
 Input.displayName = 'Input';
