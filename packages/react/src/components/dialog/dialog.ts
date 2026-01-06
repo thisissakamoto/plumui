@@ -15,9 +15,9 @@ export type {
 
 const { withRootProvider, withContext } = createStyleContext(dialogRecipe);
 
-export type RootProviderProps = ComponentProps<typeof RootProvider>;
-export const RootProvider = withRootProvider(Dialog.RootProvider);
-RootProvider.displayName = "DialogProvider";
+export type ProviderProps = ComponentProps<typeof Provider>;
+export const Provider = withRootProvider(Dialog.RootProvider);
+Provider.displayName = "DialogProvider";
 
 export type RootProps = ComponentProps<typeof Root>;
 export const Root = withRootProvider(Dialog.Root);
