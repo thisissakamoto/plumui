@@ -1,49 +1,63 @@
-// import type { StoryDefault } from "@ladle/react";
-// import { For } from "../for";
-// import { Icon } from "../icon";
-// import { Menu } from ".";
+import type { StoryDefault } from "@ladle/react";
+import { Button } from "../button";
+import { Card } from "../card";
+import { Icon } from "../icon";
+import { Portal } from "../portal";
+import { Menu } from ".";
 
-// export default {
-//   title: "Components/Menu",
-// } satisfies StoryDefault
+export default {
+  title: "Menu",
+} satisfies StoryDefault
 
-// const items = [
-//   {
-//     icon_name: "ShoppingBagIcon",
-//     label: "Shop",
-//     value: "shop",
-//   },
-//   {
-//     icon_name: "MoneyWavyIcon",
-//     label: "Billing",
-//     value: "billing",
-//   },
-//   {
-//     icon_name: "GearFineIcon",
-//     label: "Settings",
-//     value: "settings",
-//   },
-
-//   {
-//     icon_name: "PaperclipIcon",
-//     label: "Docs",
-//     value: "docs",
-//   },
-// ];
-
+const items = [
+  {
+    icon: "lucide:shopping-basket",
+    label: "Shop",
+    value: "shop",
+  },
+  {
+    icon: "lucide:tool-case",
+    label: "Billing",
+    value: "billing",
+  },
+  {
+    icon: "lucide:settings",
+    label: "Settings",
+    value: "settings",
+  },
+  {
+    icon: "lucide:file-braces-corner",
+    label: "Docs",
+    value: "docs",
+  },
+];
 
 
-// export const Base = () => {
-//   return (
-//     <For each={items} spaceY="2">
-//       {(item: (typeof items)[number]) => (
-//         <Menu.Item key={item.value} value={item.value}>
-//           <Menu.ItemIndicator>
-//             <Icon name={item.icon_name as any} boxSize="20">
-//           </Menu.ItemIndicator>
-//           <Menu.ItemText flex="1">{item.label}</Menu.ItemText>
-//         </Menu.Item>
-//       )}
-//     </For>
-//   );
-// };
+
+export const Base = () => {
+  return (
+    <Menu.Root>
+      <Menu.Trigger asChild>
+      <Button visual="surface">Actions</Button>
+      </Menu.Trigger>
+      <Portal>
+        <Menu.Positioner>
+          <Menu.Content>
+            <Card.Root p="6" w="256px" orientation="vertical">
+              {items.map((item) => {
+                return (
+                  <Menu.Item key={item.value} value={item.value}>
+                    <Menu.ItemIndicator>
+                      <Icon icon={item.icon} />
+                    </Menu.ItemIndicator>
+                    <Menu.ItemText flex="1">{item.label}</Menu.ItemText>
+                  </Menu.Item>
+                )
+              })}
+            </Card.Root>
+          </Menu.Content>
+        </Menu.Positioner>
+      </Portal>
+    </Menu.Root>
+  );
+};
