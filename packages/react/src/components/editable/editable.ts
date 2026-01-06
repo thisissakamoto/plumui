@@ -15,9 +15,9 @@ export type {
 
 const { withRootProvider, withProvider, withContext } = createStyleContext(editableRecipe);
 
-export type RootProviderProps = ComponentProps<typeof RootProvider>;
-export const RootProvider = withRootProvider(Editable.RootProvider);
-RootProvider.displayName = "EditableProvider";
+export type ProviderProps = ComponentProps<typeof Provider>;
+export const Provider = withRootProvider(Editable.RootProvider);
+Provider.displayName = "EditableProvider";
 
 export type RootProps = ComponentProps<typeof Root>;
 export const Root = withProvider(Editable.Root, "root");
