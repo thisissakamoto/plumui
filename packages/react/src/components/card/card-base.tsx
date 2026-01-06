@@ -20,9 +20,11 @@ export const Provider = React.forwardRef<HTMLDivElement, ProviderBaseProps>((pro
   );
 });
 
-export type RootBaseProps = Assign<HTMLArkProps<"div">, UseCardProps>;
+export type RootBaseProps = Assign<HTMLArkProps<"div">, UseCardProps & {
+  orientation?: "horizontal" | "vertical";
+}>;
 export const Root = React.forwardRef<HTMLDivElement, RootBaseProps>((props, ref) => {
-  const { children, ...rest } = props;
+  const { children, orientation, ...rest } = props;
   const value = useCard();
 
   return (
@@ -31,6 +33,8 @@ export const Root = React.forwardRef<HTMLDivElement, RootBaseProps>((props, ref)
         data-scope="card"
         data-part="root"
         role="group"
+        aria-orientation={orientation}
+        data-orientation={orientation}
         ref={ref}
         {...rest}
       >

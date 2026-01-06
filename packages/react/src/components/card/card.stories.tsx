@@ -14,14 +14,9 @@ export default {
       control: { type: "select" },
       options: getVariants("radius").values,
     },
-    layout: {
-      control: { type: "select" },
-      options: getVariants("layout").values,
-    }
   },
   args: {
     radius: "xl",
-    layout: "stacked",
     visual: "elevated",
   }
 } satisfies StoryDefault;
