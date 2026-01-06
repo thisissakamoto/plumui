@@ -1,7 +1,17 @@
-import { Dialog } from "@ark-ui/react/dialog";
+import type { UseDialogContext, UseDialogProps, UseDialogReturn } from "@ark-ui/react/dialog";
+import { Dialog, useDialog, useDialogContext } from "@ark-ui/react/dialog";
 import { createStyleContext } from "@plumui/styled/jsx";
 import { dialogRecipe } from "@plumui/styled/recipes";
 import type { ComponentProps } from "@plumui/styled/types";
+
+export const use = useDialog;
+export const useContext = useDialogContext;
+
+export type {
+  UseDialogProps as UseProps,
+  UseDialogReturn as UseReturn,
+  UseDialogContext as UseContext,
+}
 
 const { withRootProvider, withContext } = createStyleContext(dialogRecipe);
 
