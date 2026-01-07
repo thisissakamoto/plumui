@@ -25,9 +25,9 @@ jobs:
 
       - name: Build local packages
         run: |
-          cd packages/colors && bun build
-          cd ../presets && bun build
-          cd ../styled && bun build
+          cd packages/colors && bun run build
+          cd ../presets && bun run build
+          cd ../styled && bun run build
 
       - name: Install dependencies
         run: bun install
