@@ -1,8 +1,8 @@
 import type { UseMenuContext, UseMenuItemContext, UseMenuProps, UseMenuReturn } from "@ark-ui/react/menu";
 import { Menu, useMenu, useMenuItemContext } from "@ark-ui/react/menu";
 import { createStyleContext } from "@plumui/styled/jsx";
+import { menuRecipe } from "@plumui/styled/recipes";
 import type { ComponentProps } from "@plumui/styled/types";
-import { menuRecipe } from "packages/styled/dist/recipes";
 
 export { useMenuContext as useContext } from "@ark-ui/react/menu";
 
