@@ -36,7 +36,7 @@ export const Base: Story<Select.RootProps> = (args) => {
                 <Select.ValueText placeholder="Select industry" fontSize="14px" />
               </InputGroup.Addon>
               <Select.Indicator pr="12">
-                <Icon icon="ph:caret-down-bold" />
+                <Icon icon="ph:caret-down-bold" boxSize="14px" />
               </Select.Indicator>
             </InputGroup.Content>
           </InputGroup.Root>
