@@ -104,7 +104,6 @@ export const slotRecipes = {
 };
 
 import { anchorRecipe } from "./anchor";
-import { arrowTipRecipe } from "./arrow-tip";
 import { aspectRatioRecipe } from "./aspect-ratio";
 import { badgeRecipe } from "./badge";
 import { boxRecipe } from "./box";
@@ -149,7 +148,6 @@ export const recipes = {
 	separatorRecipe,
 	skeletonRecipe,
 	textareaRecipe,
-	arrowTipRecipe,
 	scrollShadowRecipe,
 	surfaceRecipe,
 };
