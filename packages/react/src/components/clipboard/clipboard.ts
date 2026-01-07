@@ -1,7 +1,17 @@
+import type { UseClipboardContext, UseClipboardProps, UseClipboardReturn } from "@ark-ui/react/clipboard";
 import { Clipboard, useClipboard, useClipboardContext } from "@ark-ui/react/clipboard";
 import { createStyleContext } from "@plumui/styled/jsx";
 import { clipboardRecipe } from "@plumui/styled/recipes";
 import type { ComponentProps } from "@plumui/styled/types";
+
+export const use = useClipboard;
+export const useContext = useClipboardContext;
+
+export type {
+  UseClipboardProps as UseProps,
+  UseClipboardReturn as UseReturn,
+  UseClipboardContext as UseContext,
+}
 
 const { withRootProvider, withProvider, withContext } = createStyleContext(clipboardRecipe);
 
