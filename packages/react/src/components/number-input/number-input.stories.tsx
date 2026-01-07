@@ -25,11 +25,11 @@ export const Base = () => {
                 </IconButton>
               </NumberInput.DecrementTrigger>
             </InputGroup.Addon>
-            <Separator layout="stacked" />
-            <NumberInput.Input asChild placeholder="Enter unit" px="12" w="full">
+            <Separator orientation="vertical" />
+            <NumberInput.Input asChild placeholder="Enter unit" px="12">
               <InputGroup.Input />
             </NumberInput.Input>
-            <Separator layout="stacked" />
+            <Separator orientation="vertical" />
             <InputGroup.Addon stretch flexDir="column">
               <NumberInput.IncrementTrigger asChild>
                 <IconButton tone="neutral" visual="flat" radius="none">
