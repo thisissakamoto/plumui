@@ -14,7 +14,7 @@ export const Base = () => {
     <Box maxW="400px" spaceY="20">
       {contrasts.map((contrast) => {
         return (
-          <Surface key={contrast} contrast={contrast as "low"} p="16" rounded="inherit" gap="8" flexDir="column">
+          <Surface key={contrast} contrast={contrast as "low"} p="16" radius="md" gap="8" flexDir="column">
             <Text fontSize="14">
               Surface Content
             </Text>
