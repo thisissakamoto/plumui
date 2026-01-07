@@ -17,7 +17,7 @@ export const Base: Story<Marquee.RootProps> = () => {
           {logos.map((logo, idx) => {
             return (
               <Marquee.Item key={idx.toString()} asChild>
-                <Card.Root py="8" pl="8" pr="16" gap="8" layout="inline" radius="xl" alignItems="center" visual="outlined">
+                <Card.Root py="8" pl="8" pr="16" gap="8" orientation="horizontal" radius="xl" alignItems="center" visual="outlined">
                   <Card.Media>
                     <Image src={logo.logoUrl} alt={logo.name} radius="full" boxSize="20" />
                   </Card.Media>
