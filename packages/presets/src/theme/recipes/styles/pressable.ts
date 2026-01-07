@@ -28,7 +28,6 @@ export const button = defineStyles({
   fontFamily: "inherit",
   justifyContent: 'center',
   transformOrigin: 'center',
-  bg: "{colors.transparent}",
   transition: 'all 100ms ease-in-out',
 
   _disabled,

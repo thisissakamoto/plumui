@@ -25,6 +25,9 @@ export const cardRecipe = defineSlotRecipe({
 
       _vertical: {
         flexDirection: "column",
+      },
+      _horizontal: {
+        flexDirection: "row",
       }
     },
     body: {
@@ -32,6 +35,9 @@ export const cardRecipe = defineSlotRecipe({
 
       _vertical: {
         flexDirection: "column",
+      },
+      _horizontal: {
+        flexDirection: "row",
       }
     },
     footer: {
@@ -39,6 +45,9 @@ export const cardRecipe = defineSlotRecipe({
 
       _vertical: {
         flexDirection: "column",
+      },
+      _horizontal: {
+        flexDirection: "row",
       }
     },
     header: {
@@ -46,6 +55,9 @@ export const cardRecipe = defineSlotRecipe({
 
       _vertical: {
         flexDirection: "column",
+      },
+      _horizontal: {
+        flexDirection: "row",
       }
     },
     media: styles.layout.box,

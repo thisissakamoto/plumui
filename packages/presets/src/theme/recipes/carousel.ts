@@ -7,11 +7,14 @@ export const carouselRecipe = defineSlotRecipe({
   slots: carouselAnatomy.extendWith("autoplayTrigger", "progressText").keys(),
 
   base: {
+    control: {
+      ...styles.layout.stack,
+      flexDirection: "row",
+    },
     nextTrigger: styles.pressable.button,
     prevTrigger: styles.pressable.button,
     progressText: styles.typography.subtitle,
     autoplayTrigger: styles.pressable.button,
-    control: styles.layout.stack,
     indicatorGroup: styles.layout.stack,
     indicator: styles.pressable.button,
   },

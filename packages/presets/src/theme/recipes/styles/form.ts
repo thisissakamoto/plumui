@@ -20,10 +20,11 @@ export const _focusVisible = defineStyles({
 })
 
 export const input = defineStyles({
+  border: 'none',
   outline: 'none',
+  w: '{sizes.full}',
   color: '{colors.fg}',
-  boxSize: '{sizes.full}',
-  bg: '{colors.transparent}',
+  fontFamily: "inherit",
   lineHeight: "{lineHeights.sm}",
 
   _focus,
