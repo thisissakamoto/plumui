@@ -1,3 +1,4 @@
+import { defineSemanticTokens } from "@pandacss/dev";
 import {
   amber, amberAlpha, amberDark, amberDarkAlpha,
   blackAlpha,
@@ -24,7 +25,6 @@ import {
   yellow, yellowAlpha, yellowDark, yellowDarkAlpha,
   zinc, zincAlpha, zincDark, zincDarkAlpha
 } from "@plumui/colors";
-import { defineSemanticTokens } from "@pandacss/dev";
 import { createSemanticColorTokens } from "../../utils";
 
 const bg = {
