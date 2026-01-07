@@ -12,10 +12,6 @@ export default {
       control: { type: "select" },
       options: ["thin", "light", "regular", "medium", "semibold", "bold", "extrabold", "black"]
     },
-    align: {
-      control: { type: "select" },
-      options: ["left", "right", "center", "justify"]
-    },
     trim: {
       control: { type: "select" },
       options: ["none", "cap", "both"]
@@ -26,11 +22,8 @@ export default {
   },
   args: {
     size: "14",
-    weight: "regular",
-    style: "normal",
-    writing: "horizontal",
-    align: "left",
     trim: "none",
+    weight: "regular",
     children: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..",
   },
 } satisfies StoryDefault;
