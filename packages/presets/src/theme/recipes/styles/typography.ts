@@ -44,6 +44,7 @@ export const label = defineStyles({
   textAlign: "start",
   color: '{colors.fg}',
   display: 'inline-block',
+  fontSize: '{fontSizes.14}',
   lineHeight: "{lineHeights.sm}",
   _required: {
     _after: {

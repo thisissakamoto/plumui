@@ -4,20 +4,16 @@
     "declaration": true,
     "declarationMap": true,
     "incremental": true,
-
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
-
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "moduleResolution": "bundler",
-
     "target": "ES2022",
     "module": "ESNext",
-
     "baseUrl": "."
   },
-  "exclude": ["**/dist", "**/build", "**/node_modules", "**/*.stories.*"]
+  "exclude": []
 }

@@ -1,5 +1,12 @@
 # @plumui/colors
 
+## 1.0.2
+
+### Patch Changes
+
+- Fix biome lint
+- e4b2c38: Patch: update configuration files
+
 ## 1.0.1
 
 ### Patch Changes
