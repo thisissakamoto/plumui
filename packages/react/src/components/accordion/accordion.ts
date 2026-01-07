@@ -1,7 +1,7 @@
 import { Accordion, type AccordionFocusChangeDetails, type AccordionValueChangeDetails, type UseAccordionContext, type UseAccordionItemContext, type UseAccordionProps, type UseAccordionReturn, useAccordion, useAccordionContext, useAccordionItemContext } from "@ark-ui/react/accordion";
 import { createStyleContext } from "@plumui/styled/jsx";
+import { accordionRecipe } from "@plumui/styled/recipes";
 import type { ComponentProps } from "@plumui/styled/types";
-import { accordionRecipe } from "packages/styled/dist/recipes";
 
 export const use = useAccordion;
 export const useContext = useAccordionContext;

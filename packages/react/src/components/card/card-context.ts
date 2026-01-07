@@ -19,7 +19,7 @@ export const useCardContext = () => {
 };
 
 
-const createId = (group: string, part: string) => {
+const useCreateId = (group: string, part: string) => {
   const baseId = React.useId();
   return `${group}:${baseId}:${part}`;
 }
@@ -34,15 +34,15 @@ export type UseCardProps = {
 export const useCard = (props?: UseCardProps) => {
   const { ids } = props || {};
 
-  const bodyId = ids?.body || createId("card", "body");
-  const titleId = ids?.title || createId("card", "title");
-  const descriptionId = ids?.description || createId("card", "description");
+  const bodyId = useCreateId("card", "body");
+  const titleId = useCreateId("card", "title");
+  const descriptionId = useCreateId("card", "description");
 
   return {
     ids: {
-      body: bodyId,
-      title: titleId,
-      description: descriptionId,
+      body: ids?.body || bodyId,
+      title: ids?.title || titleId,
+      description: ids?.description || descriptionId,
     },
   };
 }

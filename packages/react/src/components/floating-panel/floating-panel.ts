@@ -1,8 +1,8 @@
 import type { UseFloatingPanelContext, UseFloatingPanelProps, UseFloatingPanelReturn } from "@ark-ui/react/floating-panel";
 import { FloatingPanel, useFloatingPanel, useFloatingPanelContext } from "@ark-ui/react/floating-panel";
 import { createStyleContext } from "@plumui/styled/jsx";
+import { floatingPanelRecipe } from "@plumui/styled/recipes";
 import type { ComponentProps } from "@plumui/styled/types";
-import { floatingPanelRecipe } from "packages/styled/dist/recipes";
 
 export const use = useFloatingPanel;
 export const useContext = useFloatingPanelContext;

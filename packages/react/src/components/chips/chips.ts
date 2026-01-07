@@ -1,8 +1,8 @@
 import type {UseCheckboxContext, UseCheckboxGroupContext, UseCheckboxGroupProps, UseCheckboxGroupReturn, UseCheckboxProps, UseCheckboxReturn } from "@ark-ui/react/checkbox";
 import { Checkbox, useCheckbox, useCheckboxContext, useCheckboxGroup, useCheckboxGroupContext } from "@ark-ui/react/checkbox";
 import { createStyleContext } from "@plumui/styled/jsx";
+import { chipsRecipe } from "@plumui/styled/recipes";
 import type { ComponentProps } from "@plumui/styled/types";
-import { chipsRecipe } from "packages/styled/dist/recipes";
 
 export const use = useCheckbox;
 export const useGroup = useCheckboxGroup;
