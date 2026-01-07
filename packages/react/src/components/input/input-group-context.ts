@@ -20,27 +20,27 @@ export const useInputGroupContext = () => {
   return context;
 };
 
-const createId = (group: string, part: string)=> {
-  const baseId = React.useId();
-  return `${group}:${baseId}:${part}`;
-}
+const useCreateId = (group: string, part: string) => {
+  const groupId = React.useId();
+  return `${group}:${groupId}:${part}`;
+};
 
 export type UseInputGroupProps = Partial<UseInputGroupReturn>;
 export const useInputGroup = (props?: UseInputGroupProps) => {
   const { id, ids, invalid } = props || {};
 
-  const baseId = id || createId("input-group", "input");
-  const helperId = ids?.helper || createId("input-group", "helper");
-  const labelId = ids?.label || createId("input-group", "label");
-  const messageId = ids?.error || createId("input-group", "error");
+  const baseId = useCreateId("input-group", "input");
+  const helperId = useCreateId("input-group", "helper");
+  const labelId = useCreateId("input-group", "label");
+  const messageId = useCreateId("input-group", "message");
 
   return {
-    id: baseId,
+    id: id || baseId,
     invalid: invalid || false,
     ids: {
-      label: labelId,
-      message: messageId,
-      helper: helperId,
+      label: ids?.label || labelId,
+      helper: ids?.helper || helperId,
+      message: ids?.message || messageId,
     },
   }
 }
