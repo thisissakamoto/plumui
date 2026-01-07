@@ -11,6 +11,7 @@ type Props = {
   extend?: Record<string, any>;
 };
 
+// tailwindcss scale and semantic scale
 const scale = {
   tw: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950],
   semantic: ["10", "20", "30", "40", "50", "60", "70", "80", "90", "95", "100"],
