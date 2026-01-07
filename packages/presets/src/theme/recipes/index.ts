@@ -47,6 +47,7 @@ import { toastRecipe } from "./toast";
 import { toggleRecipe } from "./toggle";
 import { toggleGroupRecipe } from "./toggle-group";
 import { tooltipRecipe } from "./tooltip";
+import { tourRecipe } from "./tour";
 import { treeViewRecipe } from "./tree-view";
 
 export const slotRecipes = {
@@ -101,6 +102,7 @@ export const slotRecipes = {
 	toggleGroupRecipe,
 	buttonGroupRecipe,
 	marqueeRecipe,
+	tourRecipe,
 };
 
 import { anchorRecipe } from "./anchor";
