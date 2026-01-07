@@ -1,8 +1,8 @@
 import type { UseListboxContext, UseListboxItemContext, UseListboxProps, UseListboxReturn } from "@ark-ui/react/listbox";
 import { createListCollection, Listbox, useListbox, useListboxContext, useListboxItemContext } from "@ark-ui/react/listbox";
 import { createStyleContext } from "@plumui/styled/jsx";
+import { listboxRecipe } from "@plumui/styled/recipes";
 import type { ComponentProps } from "@plumui/styled/types";
-import { listboxRecipe } from "packages/styled/dist/recipes";
 
 export const use = useListbox;
 export const useContext = useListboxContext;
