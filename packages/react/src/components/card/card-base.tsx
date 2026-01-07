@@ -24,7 +24,7 @@ export type RootBaseProps = Assign<HTMLArkProps<"div">, UseCardProps & {
   orientation?: "horizontal" | "vertical";
 }>;
 export const Root = React.forwardRef<HTMLDivElement, RootBaseProps>((props, ref) => {
-  const { children, orientation, ...rest } = props;
+  const { children, orientation = "vertical", ...rest } = props;
   const value = useCard();
 
   return (
@@ -109,7 +109,7 @@ export type HeaderBaseProps = Assign<HTMLArkProps<"div">, {
   orientation?: "horizontal" | "vertical";
 }>;
 export const Header = React.forwardRef<HTMLDivElement, HeaderBaseProps>((props, ref) => {
-  const { orientation, ...rest } = props;
+  const { orientation = "horizontal", ...rest } = props;
   const { ids } = useCardContext();
 
   return (
@@ -129,7 +129,7 @@ export type BodyBaseProps = Assign<HTMLArkProps<"div">, {
   orientation?: "horizontal" | "vertical";
 }>;
 export const Body = React.forwardRef<HTMLDivElement, BodyBaseProps>((props, ref) => {
-  const { orientation, ...rest } = props;
+  const { orientation = "horizontal", ...rest } = props;
   const { ids } = useCardContext();
 
   return (
@@ -150,7 +150,7 @@ export type FooterBaseProps = Assign<HTMLArkProps<"div">, {
   orientation?: "horizontal" | "vertical";
 }>;
 export const Footer = React.forwardRef<HTMLDivElement, FooterBaseProps>((props, ref) => {
-  const { orientation, ...rest } = props;
+  const { orientation = "horizontal", ...rest } = props;
   const { ids } = useCardContext();
 
   return (
