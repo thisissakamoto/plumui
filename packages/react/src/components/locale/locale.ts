@@ -1,18 +1,7 @@
-import React from "react";
-import { jsx } from "react/jsx-runtime";
-import { splitProps } from "../../utils";
-import { factory, Factory } from "../factory";
-import { LocaleProvider, LocaleProviderProps } from "@ark-ui/react";
+import { LocaleProvider } from "@ark-ui/react";
+import { styled } from "@plumui/styled/jsx";
+import type { ComponentProps } from "@plumui/styled/types";
 
-export type LocaleRef = React.ComponentRef<"div">;
-export type LocaleProps = Factory.Props<"div", LocaleProviderProps>;
-export const Locale = React.forwardRef<LocaleRef, LocaleProps>((props, ref) => {
-  const [arkProps, divProps] = splitProps(props, ["locale"]);
-
-  return jsx(LocaleProvider, {
-    ...arkProps,
-    asChild: true,
-    children: jsx(factory.div, { ...divProps, ref }),
-  });
-});
-Locale.displayName = "Locale";
+export type LocaleProps = ComponentProps<typeof Locale>;
+export const Locale = styled(LocaleProvider);
+Locale.displayName = "Locale"

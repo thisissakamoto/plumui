@@ -1,20 +1,8 @@
-import React from "react";
-import { jsx } from "react/jsx-runtime";
-import { splitProps } from "../../utils";
-import { cx } from "../../../.styled/css";
-import { factory, Factory } from "../factory";
-import { badge, type BadgeVariantProps } from "../../../.styled/recipes";
+import { ark } from '@ark-ui/react';
+import { styled } from '@plumui/styled/jsx';
+import { badgeRecipe } from '@plumui/styled/recipes';
+import type { ComponentProps } from '@plumui/styled/types';
 
-export type BadgeRef = React.ComponentRef<"span">;
-export type BadgeProps = Factory.Props<"span", BadgeVariantProps>;
-export const Badge = React.forwardRef<BadgeRef, BadgeProps>((props, ref) => {
-  const [recipeProps, spanProps] = splitProps(props, [
-    "size", "visual", "tone", "shape"
-  ]);
-
-  return jsx(factory.span, {
-    ...spanProps,
-    ref,
-    className: cx(badge(recipeProps), props.className),
-  });
-});
+export type BadgeProps = ComponentProps<typeof Badge>;
+export const Badge = styled(ark.div, badgeRecipe);
+Badge.displayName = 'Badge';

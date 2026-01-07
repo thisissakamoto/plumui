@@ -1,0 +1,30 @@
+import { defineRecipe } from "@pandacss/dev";
+
+export const decorativeBoxRecipe = defineRecipe({
+  className: "decorative-box",
+  base: {
+    display: "flex",
+    alignItems: "center",
+    rounded: "{radii.12}",
+    boxSize: "{sizes.full}",
+    flexDirection: "column",
+    justifyContent: "center",
+  },
+  variants: {
+    visual: {
+      outlined: {
+        outline: "1px dashed {colors.stroke}",
+        bg: "color-mix(in oklab, var(--mix-10) {colors.bg.surface}, {colors.transparent})",
+      },
+      filled: {
+        backgroundClip: "padding-box",
+        bgColor: "color-mix(in oklab, var(--mix-20) {colors.bg.surface}, {colors.transparent})",
+        border: "1px solid color-mix(in oklab, var(--mix-80) {colors.stroke}, {colors.transparent})",
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.2' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E")`,
+      }
+    }
+  },
+  defaultVariants: {
+    visual: "outlined"
+  }
+});

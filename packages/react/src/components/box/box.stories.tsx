@@ -1,41 +1,17 @@
-import { Box } from ".";
-import { Badge } from "../badge";
-import type { Meta } from "@ladle/react";
+import type { Story, StoryDefault } from "@ladle/react";
+import { DecorativeBox } from "../decorative-box";
+import { Box, type BoxProps } from ".";
 
-const meta: Meta = {
-  title: "Components/Box",
-  component: Box,
-};
+export default {
+  title: "Box",
+} satisfies StoryDefault;
 
-export default meta;
-
-export const Basic = () => {
+export const Base: Story<BoxProps> = (args) => {
   return (
-    <Box
-      rounded="8"
-      height="24rem"
-      maxWidth="36rem"
-      border=".5px solid"
-      borderColor="border"
-      backgroundColor="bg.subtle"
-    />
-  );
-};
-
-export const Content = () => {
-  return (
-    <Box
-      rounded="8"
-      height="24rem"
-      maxWidth="36rem"
-      border=".5px solid"
-      alignContent="center"
-      borderColor="border"
-      backgroundColor="bg.subtle"
-    >
-      <Box width="fit" mx="auto">
-        <Badge shape="pill">Content</Badge>
+    <DecorativeBox p="12">
+      <Box {...args} boxSize="80px">
+        <DecorativeBox visual="filled" />
       </Box>
-    </Box>
-  );
+    </DecorativeBox>
+  )
 };

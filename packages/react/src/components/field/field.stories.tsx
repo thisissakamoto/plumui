@@ -1,51 +1,21 @@
-import { Field } from "./";
-import { InputGroup } from "../input";
-import { PhosphorIcon } from "../icon";
-import type { Story, Meta } from "@ladle/react";
+import type { Story, StoryDefault } from "@ladle/react";
+import { Input } from "../input";
+import { Field } from ".";
 
-const meta: Meta = {
-  title: "Components/Field",
-};
+export default {
+  title: "Field"
+} satisfies StoryDefault;
 
-export default meta;
 
-export const Basic: Story = () => {
+export const Base: Story<Field.RootProps> = () => {
   return (
-    <Field.Root spaceY="6" width="full" maxWidth="30rem">
-      <Field.Label>First name</Field.Label>
-      <InputGroup.Root>
-        <Field.Input px="1rem" placeholder="e.g Thomas" />
-      </InputGroup.Root>
-      <Field.Helper>Provide your legal first name</Field.Helper>
+    <Field.Root>
+      <Field.Label>Legal name</Field.Label>
+      <Field.Input asChild w="256px">
+        <Input />
+      </Field.Input>
+      <Field.HelperText>As written on your license</Field.HelperText>
+      <Field.ErrorText>Error Info</Field.ErrorText>
     </Field.Root>
-  );
-};
-
-export const WithError: Story = () => {
-  return (
-    <Field.Root invalid spaceY="6" width="full" maxWidth="30rem">
-      <Field.Label>First name</Field.Label>
-      <InputGroup.Root>
-        <Field.Input px="1rem" placeholder="e.g Thomas" />
-      </InputGroup.Root>
-      <Field.Error color="red.fg">Provide your legal first name</Field.Error>
-    </Field.Root>
-  );
-};
-
-export const RequiredIndicator: Story = () => {
-  return (
-    <Field.Root invalid spaceY="6" width="full" maxWidth="30rem">
-      <Field.Label>First name</Field.Label>
-      <InputGroup.Root>
-        <Field.Input px="1rem" placeholder="e.g Thomas" />
-        <InputGroup.Addon pr="1rem">
-          <Field.RequiredIndicator color="rose.fg">
-            <PhosphorIcon name="WarningCircleIcon" weight="bold" size="20" />
-          </Field.RequiredIndicator>
-        </InputGroup.Addon>
-      </InputGroup.Root>
-      <Field.Error>Provide your legal first name</Field.Error>
-    </Field.Root>
-  );
+  )
 };

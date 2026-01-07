@@ -1,22 +1,21 @@
 {
-  "name": "lens-ui",
+  "name": "plumui",
   "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "check-types": "turbo run check-types"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^2.2.6",
-    "typescript": "5.9.2"
-  },
-  "engines": {
-    "node": ">=18"
-  },
-  "packageManager": "bun@1.2.18",
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "lint": "biome lint",
+    "changeset": "bun x changeset",
+    "build:react": "cd packages/react && bun run build",
+    "build:colors": "cd packages/colors && bun run build",
+    "build:styled": "cd packages/styled && bun run build",
+    "build:presets": "cd packages/presets && bun run build"
+  },
+  "devDependencies": {
+    "changeset": "^0.2.6",
+    "@biomejs/biome": "^2.2.6",
+    "typescript": "5.9.2"
+  }
 }

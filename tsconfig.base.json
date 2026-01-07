@@ -4,27 +4,16 @@
     "declaration": true,
     "declarationMap": true,
     "incremental": true,
-
-    // Strictness
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
-
-    // Module resolution
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "moduleResolution": "bundler",
-    // "allowImportingTsExtensions": true,
-
-    // Output
     "target": "ES2022",
     "module": "ESNext",
-    "lib": ["ES2022"],
-
-    // Path mapping (define in root or individual packages)
-    "baseUrl": ".",
-    "paths": {}
+    "baseUrl": "."
   },
-  "exclude": ["**/dist", "**/build", "**/node_modules", "**/*.stories.*"]
+  "exclude": []
 }

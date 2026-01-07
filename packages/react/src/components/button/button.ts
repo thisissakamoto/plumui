@@ -1,27 +1,9 @@
-import React from "react";
-import { jsx } from "react/jsx-runtime";
-import { splitProps } from "../../utils";
-import { cx } from "../../../.styled/css";
-import { Factory, factory } from "../factory";
-import { button, type ButtonVariantProps } from "../../../.styled/recipes";
+import { ark } from "@ark-ui/react";
+import { styled } from "@plumui/styled/jsx";
+import { buttonRecipe } from "@plumui/styled/recipes";
+import type { ComponentProps } from "@plumui/styled/types";
 
-export type ButtonRef = React.ComponentRef<"button">;
-export type ButtonProps = Factory.Props<"button", ButtonVariantProps>;
-export const Button = React.forwardRef<ButtonRef, ButtonProps>((props, ref) => {
-  const [recipeProps, buttonProps] = splitProps(props, [
-    "size",
-    "visual",
-    "shape",
-    "tone",
-    "span",
-    "link"
-  ]);
 
-  const className = cx(button(recipeProps), props.className);
-
-  return jsx(factory.button, {
-    ...buttonProps,
-    ref,
-    className,
-  });
-});
+export type ButtonProps = ComponentProps<typeof Button>;
+export const Button = styled(ark.button, buttonRecipe);
+Button.displayName = "Button";
