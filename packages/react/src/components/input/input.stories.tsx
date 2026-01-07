@@ -1,50 +1,34 @@
-import { Box } from "../box";
-import { Text } from "../text";
-import { Stack } from "../stack";
-import { Button } from "../button";
-import { Input, type InputProps } from "./input";
-import { type Meta, type Story } from "@ladle/react";
+import type { Story, StoryDefault } from "@ladle/react";
+import { getVariants } from "@plumui/presets";
+import { Input, type InputProps } from ".";
 
-const options = {
-  size: ["xs", "sm", "base", "lg", "xl"],
-  shape: ["flat", "round", "rounded", "pill"],
-  visual: ["filled", "outlined", "underlined", "ghost"],
-} as const;
 
-const meta: Meta = {
-  title: "Components/Input",
-  component: Input,
-  args: {
-    size: "base",
-    shape: "round",
-    disabled: false,
-    visual: "outlined",
-  },
+export default {
+  title: "Input",
   argTypes: {
     size: {
       control: { type: "select" },
-      options: options.size,
-      description: "Controls the size of the input",
+      options: getVariants("size").values,
     },
     visual: {
       control: { type: "select" },
-      options: options.visual,
-      description: "The visual style of the input",
+      options: getVariants("visual").extendWith("filled", "elevated").values,
     },
-    shape: {
+    radius: {
       control: { type: "select" },
-      options: options.shape,
-      description: "The border radius of the input",
+      options: getVariants("radius").values,
     },
     disabled: {
       control: { type: "boolean" },
-      description: "Disables the input",
     },
   },
-};
-
-export default meta;
+  args: {
+    size: "md",
+    radius: "md",
+    visual: "elevated",
+  },
+} satisfies StoryDefault;
 
 export const Basic: Story<InputProps> = (args) => {
-  return <Input {...args} maxWidth="30rem" placeholder="Legal name" />;
+  return <Input {...args} w="256px" placeholder="Legal name" />;
 };

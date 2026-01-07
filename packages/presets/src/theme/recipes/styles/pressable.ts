@@ -18,14 +18,17 @@ export const _loading = defineStyles({
 
 export const button = defineStyles({
   gap: '4',
+  border: "none",
   lineHeight: "1",
   outline: 'none',
   cursor: 'pointer',
   position: 'relative',
   alignItems: 'center',
   display: 'inline-flex',
+  fontFamily: "inherit",
   justifyContent: 'center',
   transformOrigin: 'center',
+  bg: "{colors.transparent}",
   transition: 'all 100ms ease-in-out',
 
   _disabled,

@@ -1,18 +1,23 @@
-import React from "react";
-import { jsx } from "react/jsx-runtime";
-import { splitProps } from "../../utils";
-import { factory, Factory } from "../factory";
-import { cx } from "../../../.styled/css";
+import { ark } from "@ark-ui/react";
+import { createStyleContext } from "@plumui/styled/jsx";
+import { kbdRecipe } from "@plumui/styled/recipes";
+import type { ComponentProps } from "@plumui/styled/types";
 
-export type KbdRef = React.ComponentProps<"kbd">;
-export type KbdProps = Factory.Props<"kbd", {}>;
-export const Kbd = React.forwardRef<KbdRef, KbdProps>((props, ref) => {
-  const [recipeProps, divProps] = splitProps(props, []);
-  // const className = cx(kbd(recipeProps), props.className);
+const { withProvider, withContext } = createStyleContext(kbdRecipe);
 
-  return jsx(factory.kbd, {
-    ...divProps,
-    ref,
-    className: "",
-  });
+export type RootProps = ComponentProps<typeof Root>;
+export const Root = withProvider(ark.div, "root", {
+  defaultProps: {
+   role: "group",
+   "aria-roledescription": "keyboard shortcut",
+  }
 });
+Root.displayName = "KbdRoot";
+
+export type ItemProps = ComponentProps<typeof Item>;
+export const Item = withContext(ark.div, "item",{
+  defaultProps: {
+    role: "presentation"
+  }
+});
+Root.displayName = "KbdItem";

@@ -1,47 +1,65 @@
-import { Listbox } from "./";
-import { PhosphorIcon } from "../icon";
-import { createListCollection } from "../primitives";
-import { type Meta, type Story } from "@ladle/react";
+import type { Story, StoryDefault } from "@ladle/react";
+import { Icon } from "../icon";
+import { Listbox } from ".";
 
-const meta: Meta = {
-  title: "Components/Listbox",
-};
+export default {
+  title: "Listbox"
+} satisfies StoryDefault;
 
-export default meta;
+const collection = Listbox.createCollection({
+  items: [
+    {
+      id: "1",
+      icon: "",
+      name: "",
+    },
+    {
+      id: "2",
+      icon: "",
+      name: "",
+    },
+    {
+      id: "3",
+      icon: "",
+      name: "",
+    },
+    {
+      id: "4",
+      icon: "",
+      name: "",
+    },
+    {
+      id: "5",
+      icon: "",
+      name: "",
+    },
+    {
+      id: "6",
+      icon: "",
+      name: "",
+    }
+  ],
+  itemToValue: (item) => item.id,
+  itemToString: (item) => item.id,
+});
 
-export const Basic: Story = () => {
-  const collection = createListCollection({
-    items: ["React", "Solid", "Vue", "Svelte"],
-  });
-
+export const Base: Story<Listbox.RootProps> = () => {
   return (
-    <Listbox.Root collection={collection} maxWidth="28rem" width="full">
-      <Listbox.Label>Select your framework</Listbox.Label>
-      <Listbox.Content mt="8" p="4" spaceY="2">
-        {collection.items.map((item, index) => (
-          <Listbox.Item
-            key={index}
-            item={item}
-            rounded="6"
-            disabled={item === "Solid"}
-            _selected={{
-              color: "fg.headline",
-              backgroundColor: "bg.surface",
-            }}
-            _hover={{
-              color: "fg.headline",
-              backgroundColor: "bg.surface",
-            }}
-          >
-            <Listbox.ItemText flex="1" color="inherit">
-              {item}
-            </Listbox.ItemText>
-            <Listbox.ItemIndicator>
-              <PhosphorIcon name="CheckIcon" size="16" weight="bold" />
-            </Listbox.ItemIndicator>
-          </Listbox.Item>
-        ))}
+    <Listbox.Root collection={collection as any}>
+      <Listbox.Content w="256px">
+        {collection.items.map((item) => {
+          return (
+            <Listbox.Item item={item.id} key={item.id}>
+              <Listbox.ItemText>
+                {item.name}
+              </Listbox.ItemText>
+              <Listbox.ItemIndicator>
+                <Icon icon="lucide:check" />
+              </Listbox.ItemIndicator>
+            </Listbox.Item>
+          )
+        })}
       </Listbox.Content>
     </Listbox.Root>
-  );
+  )
 };

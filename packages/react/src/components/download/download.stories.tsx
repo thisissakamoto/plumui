@@ -1,23 +1,17 @@
-import { Download } from "./";
+import type { Story, StoryDefault } from "@ladle/react";
 import { Button } from "../button";
-import type { Meta } from "@ladle/react";
+import { Download, type DownloadProps } from ".";
 
-const meta: Meta = {
-  title: "Components/Download",
-  component: Download,
-};
+export default {
+  title: "Download",
+} satisfies StoryDefault;
 
-export default meta;
-
-export const Basic = () => {
+export const Base: Story<DownloadProps> = () => {
   return (
-    <Download
-      asChild
-      data="Hello world"
-      fileName="hello.txt"
-      mimeType="text/plain"
-    >
-      <Button shape="pill">Download</Button>
+    <Download asChild data="Hello world" fileName="hello.txt" mimeType="text/plain">
+      <Button>
+        Download
+      </Button>
     </Download>
-  );
+  )
 };

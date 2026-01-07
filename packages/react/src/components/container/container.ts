@@ -1,21 +1,8 @@
-import React from "react";
-import { jsx } from "react/jsx-runtime";
-import { splitProps } from "../../utils";
-import { cx } from "../../../.styled/css";
-import { Factory, factory } from "../factory";
-import { container, ContainerVariantProps } from "../../../.styled/recipes";
+import { ark } from '@ark-ui/react';
+import { styled } from '@plumui/styled/jsx';
+import { containerRecipe } from '@plumui/styled/recipes';
+import type { ComponentProps } from '@plumui/styled/types';
 
-export type ContainerRef = React.ComponentRef<"div">;
-export type ContainerProps = Factory.Props<"div", ContainerVariantProps>;
-export const Container = React.forwardRef<ContainerRef, ContainerProps>(
-  (props, ref) => {
-    const [recipeProps, divProps] = splitProps(props, ["size"]);
-    const className = cx(container(recipeProps), props.className);
-
-    return jsx(factory.div, {
-      ...divProps,
-      ref,
-      className,
-    });
-  },
-);
+export type ContainerProps = ComponentProps<typeof Container>;
+export const Container = styled(ark.div, containerRecipe);
+Container.displayName = 'Container';

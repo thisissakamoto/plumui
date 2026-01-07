@@ -1,45 +1,20 @@
-import { Box } from "../box";
-import { Editable } from "./";
-import { Text } from "../text";
-import { Stack } from "../stack";
-import { Button } from "../button";
-import { InputGroup } from "../input";
-import { Icon, PhosphorIcon } from "../icon";
-import type { Meta, Story } from "@ladle/react";
+import type { Story, StoryDefault } from "@ladle/react";
+import { Input } from "../input";
+import { Editable } from ".";
 
-const meta: Meta = {
-  title: "Components/Editable",
-  component: Editable,
-};
+export default {
+  title: "Editable",
+} satisfies StoryDefault;
 
-export default meta;
-
-export const Basic = () => {
+export const Base: Story<Editable.RootProps> = () => {
   return (
-    <Editable.Root
-      width="30rem"
-      placeholder="Address"
-      defaultValue="123 Bashorun Street, Bodija, Ibadan"
-    >
-      <Editable.Label asChild>
-        <Text as="label" size="14">
-          Work address
-        </Text>
-      </Editable.Label>
-      <Editable.Context>
-        {(ctx) => {
-          return (
-            <Editable.Area>
-              <InputGroup.Root size="sm" hidden={!ctx.editing}>
-                <Editable.Input px="1rem" />
-              </InputGroup.Root>
-              <Editable.Preview fontSize="1.4rem">
-                {ctx.value || "What's your address?"}
-              </Editable.Preview>
-            </Editable.Area>
-          );
-        }}
-      </Editable.Context>
+    <Editable.Root placeholder="Placeholder">
+      <Editable.Area>
+        <Editable.Input asChild>
+          <Input size="xs" />
+        </Editable.Input>
+        <Editable.Preview />
+      </Editable.Area>
     </Editable.Root>
-  );
+  )
 };

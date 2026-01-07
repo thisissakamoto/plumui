@@ -1,54 +1,44 @@
-import { Fieldset } from "./";
+import type { Story, StoryDefault } from "@ladle/react";
+import { Button } from "../button";
 import { Field } from "../field";
-import { InputGroup } from "../input";
-import { Checkbox } from "../checkbox";
-import { PhosphorIcon } from "../icon";
-import type { Meta } from "@ladle/react";
+import { Input } from "../input";
+import { Separator } from "../separator";
+import { Textarea } from "../textarea";
+import { Fieldset } from ".";
 
-const meta: Meta = {
-  title: "Components/Fieldset",
-};
+export default {
+  title: "Fieldset"
+} satisfies StoryDefault;
 
-export default meta;
-
-export const Basic = () => {
+export const Base:  Story<Fieldset.RootProps> = () => {
   return (
-    <Fieldset.Root width="full" maxWidth="30rem">
-      <Fieldset.Legend fontSize="1.8rem">Contact</Fieldset.Legend>
-      <Fieldset.Helper>Provide your contact information data.</Fieldset.Helper>
-      <Fieldset.Error>Provide your contact information data</Fieldset.Error>
-      <Field.Root spaceY="6" mt="20">
-        <Field.Label>Email</Field.Label>
-        <InputGroup.Root>
-          <Field.Input px="1rem" placeholder="e.g Thomas" />
-        </InputGroup.Root>
-        <Field.Helper>Provide your email address</Field.Helper>
-        <Field.Error>Provide your email address</Field.Error>
+    <Fieldset.Root>
+      <Fieldset.Legend>
+        Profile settings
+      </Fieldset.Legend>
+      <Fieldset.HelperText mt="8">
+        Please fill out the following fields to update your profile.
+      </Fieldset.HelperText>
+      <Separator spaceY="3xl" />
+      <Field.Root>
+        <Field.Label>
+          Name
+        </Field.Label>
+        <Field.Input asChild placeholder="e.g John Doe">
+          <Input/>
+        </Field.Input>
       </Field.Root>
+      <Field.Root mt="12">
+        <Field.Label>
+          Bio
+        </Field.Label>
+        <Field.Textarea asChild placeholder="e.g John Doe">
+          <Textarea />
+        </Field.Textarea>
+      </Field.Root>
+      <Button visual="surface" mt="20">
+        Save changes
+      </Button>
     </Fieldset.Root>
-  );
-};
-
-export const WithCheckbox = () => {
-  return (
-    <Fieldset.Root width="full" maxWidth="30rem">
-      <Fieldset.Legend fontSize="1.8rem">Motion</Fieldset.Legend>
-      <Fieldset.Helper>
-        Control how animations and transitions are rendered within the
-        application.
-      </Fieldset.Helper>
-      <Fieldset.Error>
-        We are unable to complete the request try again later.
-      </Fieldset.Error>
-      <Checkbox.Root mt="20">
-        <Checkbox.Control>
-          <Checkbox.Indicator>
-            <PhosphorIcon name="Check" weight="bold" size="12px" />
-          </Checkbox.Indicator>
-        </Checkbox.Control>
-        <Checkbox.Label>Reduce motion</Checkbox.Label>
-        <Checkbox.HiddenInput />
-      </Checkbox.Root>
-    </Fieldset.Root>
-  );
-};
+  )
+}

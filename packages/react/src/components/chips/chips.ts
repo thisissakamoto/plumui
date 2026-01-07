@@ -1,268 +1,52 @@
-import React from "react";
-import { jsx } from "react/jsx-runtime";
-import { splitProps } from "../../utils";
-import { TagsInput, useTagsInput, useTagsInputContext, useTagsInputItemContext, type UseTagsInputContext, type UseTagsInputItemContext, type UseTagsInputProps, type UseTagsInputReturn } from "@ark-ui/react";
-import { factory, Factory } from "../factory";
-import { chips } from "../../../.styled/recipes";
-import { createStyleContext } from "../../../.styled/jsx";
+import type {UseCheckboxContext, UseCheckboxGroupContext, UseCheckboxGroupProps, UseCheckboxGroupReturn, UseCheckboxProps, UseCheckboxReturn } from "@ark-ui/react/checkbox";
+import { Checkbox, useCheckbox, useCheckboxContext, useCheckboxGroup, useCheckboxGroupContext } from "@ark-ui/react/checkbox";
+import { createStyleContext } from "@plumui/styled/jsx";
+import type { ComponentProps } from "@plumui/styled/types";
+import { chipsRecipe } from "packages/styled/dist/recipes";
 
-const chipsStyleContext = createStyleContext(chips);
+export const use = useCheckbox;
+export const useGroup = useCheckboxGroup;
+export const useContext = useCheckboxContext;
+export const useGroupContext = useCheckboxGroupContext;
 
-export const use = useTagsInput;
-export const useContext = useTagsInputContext;
-export const useItemContext = useTagsInputItemContext;
+export type {
+  UseCheckboxContext as UseContext,
+  UseCheckboxGroupContext as UseGroupContext,
+  UseCheckboxGroupProps as UseGroupProps,
+  UseCheckboxGroupReturn as UseGroupReturn,
+  UseCheckboxProps as UseProps,
+  UseCheckboxReturn as UseReturn
+}
 
-export type { UseTagsInputContext as UseContext, UseTagsInputProps as UseProps, UseTagsInputReturn as UseReturn, UseTagsInputItemContext as UseItemContext };
+const { withRootProvider, withProvider, withContext } = createStyleContext(chipsRecipe);
 
-// Provider Component
-export type ProviderRef = React.ComponentRef<"div">;
-export type ProviderProps = Factory.Props<
-  "div",
-  TagsInput.RootProviderBaseProps
->;
-export const Provider = chipsStyleContext.withProvider(
-  React.forwardRef<ProviderRef, ProviderProps>((props, ref) => {
-    const [arkProps, divProps] = splitProps(props, ["value"]);
+export type ProviderProps = ComponentProps<typeof Provider>;
+export const Provider = withRootProvider(Checkbox.GroupProvider);
+Provider.displayName = "CheckboxProvider";
 
-    return jsx(TagsInput.RootProvider, {
-      ...arkProps,
-      asChild: true,
-      children: jsx(factory.div, { ...divProps, ref }),
-    });
-  }),
-  "root",
-);
-Provider.displayName = "ChipsProvider";
+export type RootProps = ComponentProps<typeof Root>;
+export const Root = withProvider(Checkbox.Group, "root");
+Root.displayName = "CheckboxRoot";
 
-// Root Component
-export type RootRef = React.ComponentRef<"div">;
-export type RootProps = Factory.Props<"div", TagsInput.RootBaseProps>;
-export const Root = chipsStyleContext.withProvider(
-  React.forwardRef<RootRef, RootProps>((props, ref) => {
-    const [arkProps, divProps] = splitProps(props, [
-      "addOnPaste",
-      "allowOverflow",
-      "blurBehavior",
-      "defaultValue",
-      "delimiter",
-      "disabled",
-      "form",
-      "id",
-      "ids",
-      "inputValue",
-      "invalid",
-      "max",
-      "maxLength",
-      "name",
-      "onFocusOutside",
-      "onHighlightChange",
-      "onInputValueChange",
-      "onInteractOutside",
-      "onPointerDownOutside",
-      "onInputValueChange",
-      "onValueChange",
-      "onValueInvalid",
-      "readOnly",
-      "required",
-      "translations",
-      "validate",
-      "value",
-    ]);
+export type ItemProps = ComponentProps<typeof Item>;
+export const Item = withProvider(Checkbox.Root, "item");
+Item.displayName = "CheckboxItem";
 
-    return jsx(TagsInput.Root, {
-      ...arkProps,
-      asChild: true,
-      children: jsx(factory.div, { ...divProps, ref }),
-    });
-  }),
-  "root",
-);
-Root.displayName = "ChipsRoot";
+export type LabelProps = ComponentProps<typeof Label>;
+export const Label = withContext(Checkbox.Label, "label");
+Label.displayName = "CheckboxLabel";
 
-// Context Component
-export type ContextRef = React.ComponentRef<"div">;
-export type ContextProps = Factory.Props<"div", TagsInput.ContextProps>;
-export const Context = chipsStyleContext.withContext(
-  React.forwardRef<ContextRef, ContextProps>((props, ref) => {
-    const [arkProps, divProps] = splitProps(props, ["children"]);
+export type ControlProps = ComponentProps<typeof Control>;
+export const Control = withContext(Checkbox.Control, "control");
+Control.displayName = "CheckboxControl";
 
-    return jsx(factory.div, {
-      ...divProps,
-      ref,
-      children: jsx(TagsInput.Context, { ...arkProps }),
-    });
-  }),
-  "context",
-);
-Context.displayName = "ChipsContext";
+export type IndicatorProps = ComponentProps<typeof Indicator>;
+export const Indicator = withContext(Checkbox.Indicator, "indicator");
+Indicator.displayName = "CheckboxIndicator";
 
-// Label Component
-export type LabelRef = React.ComponentRef<"label">;
-export type LabelProps = Factory.Props<"label", TagsInput.LabelBaseProps>;
-export const Label = chipsStyleContext.withContext(
-  React.forwardRef<LabelRef, LabelProps>((props, ref) => {
-    const [arkProps, labelProps] = splitProps(props, ["asChild"]);
+export type HiddenInputProps = ComponentProps<typeof HiddenInput>;
+export const HiddenInput = Checkbox.HiddenInput;
+HiddenInput.displayName = "CheckboxHiddenInput";
 
-    return jsx(TagsInput.Label, {
-      ...arkProps,
-      asChild: true,
-      children: jsx(factory.label, { ...labelProps, ref }),
-    });
-  }),
-  "label",
-);
-Label.displayName = "ChipsLabel";
-
-// Control Component
-export type ControlRef = React.ComponentRef<"div">;
-export type ControlProps = Factory.Props<"div", TagsInput.ControlBaseProps>;
-export const Control = chipsStyleContext.withContext(
-  React.forwardRef<ControlRef, ControlProps>((props, ref) => {
-    const [arkProps, divProps] = splitProps(props, []);
-
-    return jsx(TagsInput.Control, {
-      ...arkProps,
-      asChild: true,
-      children: jsx(factory.div, { ...divProps, ref }),
-    });
-  }),
-  "control",
-);
-Control.displayName = "ChipsControl";
-
-// Input Component
-export type InputRef = React.ComponentRef<"input">;
-export type InputProps = Factory.Props<"input", TagsInput.InputBaseProps>;
-export const Input = chipsStyleContext.withContext(
-  React.forwardRef<InputRef, InputProps>((props, ref) => {
-    const [arkProps, inputProps] = splitProps(props, []);
-
-    return jsx(TagsInput.Input, {
-      ...arkProps,
-      asChild: true,
-      children: jsx(factory.input, { ...inputProps, ref }),
-    });
-  }),
-  "input",
-);
-Input.displayName = "ChipsInput";
-
-// Item Component
-export type ItemRef = React.ComponentRef<"div">;
-export type ItemProps = Factory.Props<"div", TagsInput.ItemBaseProps>;
-export const Item = chipsStyleContext.withContext(
-  React.forwardRef<ItemRef, ItemProps>((props, ref) => {
-    const [arkProps, divProps] = splitProps(props, [
-      "asChild",
-      "index",
-      "value",
-    ]);
-
-    return jsx(TagsInput.Item, {
-      ...arkProps,
-      asChild: true,
-      children: jsx(factory.div, { ...divProps, ref }),
-    });
-  }),
-  "item",
-);
-Item.displayName = "ChipsItem";
-
-// ItemInput Component
-export type ItemInputRef = React.ComponentRef<"input">;
-export type ItemInputProps = Factory.Props<
-  "input",
-  TagsInput.ItemInputBaseProps
->;
-export const ItemInput = chipsStyleContext.withContext(
-  React.forwardRef<ItemInputRef, ItemInputProps>((props, ref) => {
-    const [arkProps, inputProps] = splitProps(props, []);
-
-    return jsx(TagsInput.ItemInput, {
-      ...arkProps,
-      asChild: true,
-      children: jsx(factory.input, { ...inputProps, ref }),
-    });
-  }),
-  "item-input",
-);
-ItemInput.displayName = "ChipsItemInput";
-
-// ItemText Component
-export type ItemTextRef = React.ComponentRef<"span">;
-export type ItemTextProps = Factory.Props<"span", TagsInput.ItemTextBaseProps>;
-export const ItemText = chipsStyleContext.withContext(
-  React.forwardRef<ItemTextRef, ItemTextProps>((props, ref) => {
-    const [arkProps, spanProps] = splitProps(props, []);
-
-    return jsx(TagsInput.ItemText, {
-      ...arkProps,
-      asChild: true,
-      children: jsx(factory.span, { ...spanProps, ref }),
-    });
-  }),
-  "item-text",
-);
-ItemText.displayName = "ChipsItemText";
-
-// ItemDeleteTrigger Component
-export type ItemDeleteTriggerRef = React.ComponentRef<"button">;
-export type ItemDeleteTriggerProps = Factory.Props<
-  "button",
-  TagsInput.ItemDeleteTriggerBaseProps
->;
-export const ItemDeleteTrigger = chipsStyleContext.withContext(
-  React.forwardRef<ItemDeleteTriggerRef, ItemDeleteTriggerProps>(
-    (props, ref) => {
-      const [arkProps, buttonProps] = splitProps(props, []);
-
-      return jsx(TagsInput.ItemDeleteTrigger, {
-        ...arkProps,
-        asChild: true,
-        children: jsx(factory.button, { ...buttonProps, ref }),
-      });
-    },
-  ),
-  "item-delete-trigger",
-);
-ItemDeleteTrigger.displayName = "ChipsItemDeleteTrigger";
-
-// ClearTrigger Component
-export type ClearTriggerRef = React.ComponentRef<"button">;
-export type ClearTriggerProps = Factory.Props<
-  "button",
-  TagsInput.ClearTriggerBaseProps
->;
-export const ClearTrigger = chipsStyleContext.withContext(
-  React.forwardRef<ClearTriggerRef, ClearTriggerProps>((props, ref) => {
-    const [arkProps, buttonProps] = splitProps(props, []);
-
-    return jsx(TagsInput.ClearTrigger, {
-      ...arkProps,
-      asChild: true,
-      children: jsx(factory.button, { ...buttonProps, ref }),
-    });
-  }),
-  "clear-trigger",
-);
-ClearTrigger.displayName = "ChipsClearTrigger";
-
-// HiddenInput Component
-export type HiddenInputRef = React.ComponentRef<"input">;
-export type HiddenInputProps = Factory.Props<
-  "input",
-  TagsInput.HiddenInputBaseProps
->;
-export const HiddenInput = chipsStyleContext.withContext(
-  React.forwardRef<HiddenInputRef, HiddenInputProps>((props, ref) => {
-    const [arkProps, inputProps] = splitProps(props, []);
-
-    return jsx(TagsInput.HiddenInput, {
-      ...arkProps,
-      asChild: true,
-      children: jsx(factory.input, { ...inputProps, ref }),
-    });
-  }),
-  "hidden-input",
-);
-HiddenInput.displayName = "ChipsHiddenInput";
+export type ContextProps = ComponentProps<typeof Context>;
+export const Context = Checkbox.Context;

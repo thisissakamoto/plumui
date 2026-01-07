@@ -32,9 +32,10 @@ export const accordionRecipe = defineSlotRecipe({
       fontSize: "{fontSizes.14}",
       justifyContent: "space-between",
 
-      _hover: {
+      "&:hover:not([data-state=open])": {
         bg: "{colors.bg.subtle}",
-      }
+      },
+
     },
     itemIndicator: {
       flexShrink: "0",

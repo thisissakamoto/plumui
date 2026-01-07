@@ -1,25 +1,8 @@
-import React from "react";
-import { jsx } from "react/jsx-runtime";
-import { splitProps } from "../../utils";
-import { factory, Factory } from "../factory";
-import { DownloadTrigger, DownloadTriggerBaseProps } from "@ark-ui/react";
+import { DownloadTrigger } from "@ark-ui/react/download-trigger";
+import { styled } from "@plumui/styled/jsx";
+import { downloadRecipe } from "@plumui/styled/recipes";
+import type { ComponentProps } from "@plumui/styled/types";
 
-// Download Component
-export type DownloadRef = React.ComponentRef<"button">;
-export type DownloadProps = Factory.Props<"button", DownloadTriggerBaseProps>;
-export const Download = React.forwardRef<DownloadRef, DownloadProps>(
-  (props, ref) => {
-    const [arkProps, buttonProps] = splitProps(props, [
-      "data",
-      "fileName",
-      "mimeType",
-    ]);
-
-    return jsx(DownloadTrigger, {
-      ...arkProps,
-      asChild: true,
-      children: jsx(factory.button, { ...buttonProps, ref }),
-    });
-  },
-);
-Download.displayName = "DownloadTrigger";
+export type DownloadProps = ComponentProps<typeof Download>;
+export const Download = styled(DownloadTrigger, downloadRecipe);
+Download.displayName = "Download";
