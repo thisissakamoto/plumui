@@ -36,23 +36,23 @@ export const Root = React.forwardRef<HTMLDivElement, RootBaseProps>((props, ref)
   )
 })
 
-export type AddonBaseProps = Assign<HTMLArkProps<"div">, {stretch?: boolean}>;
+export type AddonBaseProps = Assign<HTMLArkProps<"div">, { stretch?: boolean, orientation?: "horizontal" | "vertical" }>;
 export const Addon = React.forwardRef<HTMLDivElement, AddonBaseProps>((props, ref) => {
-  const { stretch = false, ...rest } = props;
+  const { stretch = false, orientation = "horizontal", ...rest } = props;
   useInputGroupContext();
 
   return (
-    <ark.div ref={ref} data-scope="input-group" data-part="addon" aria-hidden={true} data-stretch={stretch} {...rest} />
+    <ark.div ref={ref} data-scope="input-group" data-part="addon" aria-hidden={true} aria-orientation={orientation} data-orientation={orientation} data-stretch={stretch} {...rest} />
   )
 });
 
-export type ContentBaseProps = HTMLArkProps<"div">
+export type ContentBaseProps = Assign<HTMLArkProps<"div">, { orientation?: "horizontal" | "vertical" }>;
 export const Content = React.forwardRef<HTMLDivElement, ContentBaseProps>((props, ref) => {
-  const { ...rest } = props;
+  const { orientation = "horizontal", ...rest } = props;
   useInputGroupContext();
 
   return (
-    <ark.div ref={ref} data-scope="input-group" data-part="content" aria-hidden={true} {...rest} />
+    <ark.div ref={ref} data-scope="input-group" data-part="content" aria-hidden={true} aria-orientation={orientation} data-orientation={orientation} {...rest} />
   )
 });
 
@@ -91,7 +91,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputBaseProps>((props, 
   const { ...rest } = props;
   const { id, ids, invalid } =  useInputGroupContext();
 
-  const ariaDescribedBy = [invalid ? ids.error : null, !invalid ? ids.helper : null].filter(Boolean).join(" ");
+  const ariaDescribedBy = [invalid ? ids.message : null, !invalid ? ids.helper : null].filter(Boolean).join(" ");
 
   return (
     <ark.input ref={ref} id={id} data-scope="input-group" data-part="input" aria-invalid={invalid} aria-describedby={ariaDescribedBy} {...rest} />
@@ -103,7 +103,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaBaseProps>
   const { autoresize, ...rest } = props;
   const { id, ids, invalid } =  useInputGroupContext();
 
-  const ariaDescribedBy = [invalid ? ids.error : null, !invalid ? ids.helper : null].filter(Boolean).join(" ");
+  const ariaDescribedBy = [invalid ? ids.message : null, !invalid ? ids.helper : null].filter(Boolean).join(" ");
 
   return (
     <ark.textarea asChild ref={ref} id={id} data-scope="input-group" data-part="textarea" aria-invalid={invalid} aria-describedby={ariaDescribedBy} {...rest}>
