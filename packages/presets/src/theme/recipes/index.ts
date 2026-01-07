@@ -122,6 +122,7 @@ import { scrollShadowRecipe } from "./scroll-shadow";
 import { sectionRecipe } from "./section";
 import { separatorRecipe } from "./separator";
 import { skeletonRecipe } from "./skeleton";
+import { spinnerRecipe } from "./spinner";
 import { stackRecipe } from "./stack";
 import { surfaceRecipe } from "./surface";
 import { textRecipe } from "./text";
@@ -144,6 +145,7 @@ export const recipes = {
 	inputRecipe,
 	decorativeBoxRecipe,
 	highlightRecipe,
+	spinnerRecipe,
 	anchorRecipe,
 	separatorRecipe,
 	skeletonRecipe,
