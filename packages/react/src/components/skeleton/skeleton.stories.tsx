@@ -1,8 +1,8 @@
 import type { Story, StoryDefault } from "@ladle/react";
-import { Skeleton, SkeletonProps } from ".";
 import { getVariants } from "@plumui/presets";
 import { DecorativeBox } from "../decorative-box";
 import { Text as BaseText } from "../text";
+import { Skeleton, type SkeletonProps } from ".";
 
 export default {
   title: "Skeleton",
