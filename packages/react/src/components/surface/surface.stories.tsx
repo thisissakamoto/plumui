@@ -1,7 +1,7 @@
-import { StoryDefault } from "@ladle/react";
-import { Surface } from "./surface";
-import { Card } from "../card";
+import type { StoryDefault } from "@ladle/react";
 import { Box } from "../box";
+import { Text } from "../text";
+import { Surface } from "./surface";
 
 export default {
   title: "Surface",
@@ -14,16 +14,14 @@ export const Base = () => {
     <Box maxW="400px" spaceY="20">
       {contrasts.map((contrast) => {
         return (
-          <Card.Root visual="ghost" key={contrast} radius="2xl">
-            <Surface contrast={contrast as "low"} p="16" rounded="inherit" gap="8" flexDir="column">
-              <Card.Title fontSize="14">
-                Surface Content
-              </Card.Title>
-              <Card.Description>
-                This is a default surface variant. It uses bg-surface styling.
-              </Card.Description>
-            </Surface>
-          </Card.Root>
+          <Surface key={contrast} contrast={contrast as "low"} p="16" rounded="inherit" gap="8" flexDir="column">
+            <Text fontSize="14">
+              Surface Content
+            </Text>
+            <Text>
+              This is a default surface variant. It uses bg-surface styling.
+            </Text>
+          </Surface>
         )
       })}
     </Box>
