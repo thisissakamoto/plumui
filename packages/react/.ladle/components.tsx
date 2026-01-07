@@ -15,8 +15,8 @@ export const Provider: GlobalProvider = ({ children, globalState }) => {
   }, [globalState.theme]);
 
   return (
-    <Container maxW="560px" py="40">
-      <Stack justify="center" items="center" minH="100dvh">
+    <Container maxW="560px">
+      <Stack justify="center" py="40" items="center" minH="100dvh">
         {children}
       </Stack>
     </Container>
