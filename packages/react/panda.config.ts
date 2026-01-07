@@ -6,7 +6,7 @@ export default defineConfig({
   outExtension: "js",
   clean: true,
   jsxFramework: "react",
-  outdir: "./dist/panda",
+  outdir: "../styled/dist",
   include: [
     "src/components/**/*.{js,jsx,ts,tsx}",
     ".ladle/components.tsx",
