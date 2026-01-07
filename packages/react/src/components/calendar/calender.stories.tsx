@@ -14,7 +14,7 @@ export const Base = () => {
       <Calendar.Content w="256px">
         <Card.Root>
           <Calendar.ViewControl>
-            <Card.Header w="full" py="8" px="16" alignItems="center">
+            <Card.Header w="full" py="8" px="16" alignItems="center" orientation="horizontal">
               <Calendar.PrevTrigger asChild>
                 <IconButton visual="ghost" tone="neutral">
                   <Icon icon="lucide:chevron-left" />
