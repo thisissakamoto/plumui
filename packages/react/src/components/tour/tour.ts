@@ -7,6 +7,7 @@ import {
   useTourContext,
 } from "@ark-ui/react/tour";
 import { createStyleContext } from "@plumui/styled/jsx";
+import { tourRecipe } from "@plumui/styled/recipes";
 import type { ComponentProps } from "@plumui/styled/types";
 
 export const use = useTour;
@@ -18,7 +19,7 @@ export type {
   UseTourReturn as UseReturn,
 };
 
-const { withProvider, withContext } = createStyleContext();
+const { withProvider, withContext } = createStyleContext(tourRecipe);
 
 export type RootProps = ComponentProps<typeof Root>;
 export const Root = withProvider(Tour.Root, "root");

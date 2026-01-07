@@ -1,8 +1,7 @@
 import type { Story, StoryDefault } from "@ladle/react";
 import { getVariants } from "@plumui/presets";
-import { ScrollArea } from ".";
 import { DecorativeBox } from "../decorative-box";
-import { Card } from "../card";
+import { ScrollArea } from ".";
 
 
 export default {
@@ -37,15 +36,13 @@ export const Base: Story<ScrollArea.RootProps> = (args) => {
   return (
     <ScrollArea.Root asChild {...args}>
       <DecorativeBox p="16">
-        <Card.Root visual="ghost" w="400px" h="300px">
-          <ScrollArea.Viewport>
-            <Content />
-          </ScrollArea.Viewport>
-          <ScrollArea.Scrollbar my="20">
-            <ScrollArea.Thumb />
-          </ScrollArea.Scrollbar>
-          <ScrollArea.Corner />
-        </Card.Root>
+        <ScrollArea.Viewport>
+          <Content />
+        </ScrollArea.Viewport>
+        <ScrollArea.Scrollbar my="20">
+          <ScrollArea.Thumb />
+        </ScrollArea.Scrollbar>
+        <ScrollArea.Corner />
       </DecorativeBox>
     </ScrollArea.Root>
   );
@@ -55,11 +52,9 @@ export const Hidden: Story<ScrollArea.RootProps> = (args) => {
   return (
     <ScrollArea.Root asChild {...args}>
       <DecorativeBox p="16">
-        <Card.Root visual="ghost" w="400px" h="300px">
-          <ScrollArea.Viewport>
-            <Content />
-          </ScrollArea.Viewport>
-        </Card.Root>
+        <ScrollArea.Viewport>
+          <Content />
+        </ScrollArea.Viewport>
       </DecorativeBox>
     </ScrollArea.Root>
   );
