@@ -1,16 +1,21 @@
 {
   "name": "plumui",
   "private": true,
-  "scripts": {},
-  "devDependencies": {
-    "@biomejs/biome": "^2.2.6",
-    "typescript": "5.9.2"
-  },
-  "engines": {
-    "node": ">=18"
-  },
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "lint": "biome lint",
+    "changeset": "bun x changeset",
+    "build:react": "cd packages/react && bun run build",
+    "build:colors": "cd packages/colors && bun run build",
+    "build:styled": "cd packages/styled && bun run build",
+    "build:presets": "cd packages/presets && bun run build"
+  },
+  "devDependencies": {
+    "changeset": "^0.2.6",
+    "@biomejs/biome": "^2.2.6",
+    "typescript": "5.9.2"
+  }
 }
