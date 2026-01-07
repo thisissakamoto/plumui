@@ -4,7 +4,6 @@ import { basePreset } from "@plumui/presets";
 export default defineConfig({
   presets: [basePreset],
   outExtension: "js",
-  clean: true,
   jsxFramework: "react",
   outdir: "../styled/dist",
   include: [
