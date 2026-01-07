@@ -24,16 +24,13 @@ jobs:
           echo "$HOME/.bun/bin" >> $GITHUB_PATH
 
       - name: Install dependencies
-        run: bun install
+        run: bun install --ignore-scripts
 
-      - name: Build @plumui/colors
-        run: bun run build:colors
-
-      - name: Build @plumui/presets
-        run: bun run build:presets
-
-      - name: Build @plumui/styled
-        run: bun run build:styled
+      - name: Build local packages
+        run: |
+          cd packages/colors && bun run build
+          cd ../presets && bun run build
+          cd ../styled && bun run build
 
       - name: Run linting
         run: bun run lint
