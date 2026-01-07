@@ -1,5 +1,19 @@
 # @plumui/presets
 
+## 1.0.0
+
+### Major Changes
+
+- @plumui/presets initial release
+
+## 0.0.1
+
+### Patch Changes
+
+- Updated dependencies
+- Updated dependencies [e4b2c38]
+  - @plumui/colors@1.0.2
+
 ## 0.0.2
 
 ### Patch Changes

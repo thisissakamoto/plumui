@@ -1,7 +1,7 @@
 {
   "name": "@plumui/styled",
-  "description": "A React component library styled system for building user interfaces with a focus on performance and accessibility.",
-  "version": "0.0.0",
+  "description": "Styled system for building user interfaces with a focus on performance and accessibility.",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "panda codegen",

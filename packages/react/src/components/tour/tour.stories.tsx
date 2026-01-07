@@ -1,14 +1,5 @@
-import type { Meta, Story } from "@ladle/react";
-import { Tour } from ".";
+import type { StoryDefault } from "@ladle/react";
 
-const meta: Meta = {
+export default {
   title: "Tour",
-  component: Tour.Root,
-}
-export default meta;
-
-export const Basic: Story<Tour.RootProps> = () => {
-  return (
-    <Tour.Root></Tour.Root>
-  )
-}
+  } satisfies StoryDefault

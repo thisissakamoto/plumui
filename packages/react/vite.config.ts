@@ -1,12 +1,14 @@
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import pkg from './package.json';
 
 export default defineConfig({
   plugins: [
     dts({
       outDir: 'dist/types',
       insertTypesEntry: true,
+      exclude: ["node_modules"]
     }),
   ],
   esbuild: {
@@ -20,7 +22,10 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.ts'),
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: [
+        ...Object.keys(pkg.dependencies ?? {}),
+        ...Object.keys(pkg.peerDependencies ?? {}),
+      ],
       output: [
         {
           format: 'es',
