@@ -44,6 +44,13 @@ export const globalCss = defineGlobalStyles({
     display: "inline-block",
     verticalAlign: "middle",
   },
+  button: {
+    appreance: "button",
+    bgColor: "{colors.transparent}"
+  },
+  "h1, h2, h3, h4, h5, h6": {
+    fontWeight: "inherit",
+  },
   path: {
     fill: "{color.current}",
   },

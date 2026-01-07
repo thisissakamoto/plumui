@@ -28,7 +28,7 @@ export const Base: Story<Timer.RootProps> = () => {
           <Card.Footer p="16" gap="12" w="full" alignItems="center">
             <Timer.ActionTrigger asChild action="pause">
               <Button wide visual="surface" size="md">
-                <Icon icon="ph:pause:fill" boxSize="20px" />
+                <Icon icon="ph:pause-fill" boxSize="20px" />
               </Button>
             </Timer.ActionTrigger>
             <Timer.ActionTrigger asChild action="resume">

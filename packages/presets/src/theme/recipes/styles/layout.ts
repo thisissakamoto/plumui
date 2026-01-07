@@ -18,7 +18,6 @@ export const section = defineStyles({
 export const stack = defineStyles({
   display: 'flex',
   w: "{sizes.full}",
-  flexDirection: 'column',
 });
 
 export const hstack = defineStyles({
