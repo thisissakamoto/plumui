@@ -26,5 +26,14 @@ jobs:
       - name: Install dependencies
         run: bun install
 
+      - name: Build @plumui/colors
+        run: bun run build:colors
+
+      - name: Build @plumui/presets
+        run: bun run build:presets
+
+      - name: Build @plumui/styled
+        run: bun run build:styled
+
       - name: Run linting
         run: bun run lint
