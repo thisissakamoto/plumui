@@ -1,5 +1,4 @@
 import type { StoryDefault } from "@ladle/react";
-import { ArrowTip } from "../arrow-tip";
 import { Button } from "../button";
 import { Card } from "../card";
 import { Portal } from "../portal";
@@ -19,11 +18,6 @@ export const Base = () => {
         <HoverCard.Positioner>
           <HoverCard.Content>
             <Card.Root maxW="320px" visual="elevated">
-              <HoverCard.Arrow>
-                <HoverCard.ArrowTip asChild>
-                  <ArrowTip />
-                </HoverCard.ArrowTip>
-              </HoverCard.Arrow>
               <Card.Body py="8" px="16">
                 <Card.Description>
                   Saved locally every few seconds. Submit to server manually.
