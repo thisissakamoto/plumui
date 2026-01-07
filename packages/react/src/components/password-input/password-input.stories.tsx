@@ -2,8 +2,8 @@ import type { StoryDefault } from "@ladle/react";
 import { IconButton } from "../button";
 import { Icon } from "../icon";
 import { InputGroup } from "../input";
-import { PasswordInput } from ".";
 import { Separator } from "../separator";
+import { PasswordInput } from ".";
 
 export default {
 	title: "Password Input",
@@ -21,7 +21,7 @@ export const Base = () => {
             <PasswordInput.Input asChild px="12" flex="1">
               <InputGroup.Input />
             </PasswordInput.Input>
-            <Separator layout="stacked" />
+            <Separator orientation="vertical" />
             <InputGroup.Addon stretch>
               <PasswordInput.VisibilityTrigger asChild>
                 <IconButton radius="none" tone="neutral" visual="ghost">
