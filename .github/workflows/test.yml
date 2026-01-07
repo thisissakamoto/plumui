@@ -31,6 +31,7 @@ jobs:
           cd packages/colors && bun run build
           cd ../presets && bun run build
           cd ../styled && bun run build
+          cd ../react && bun run build
 
       - name: Run linting
         run: bun run lint

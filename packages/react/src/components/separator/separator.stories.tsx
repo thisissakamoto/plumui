@@ -22,7 +22,7 @@ export default {
 
 export const Base: Story<SeparatorProps> = (args) => {
   return (
-    <DecorativeBox {...args} flexDir={args.orientation === "vertical" ? "row" : "column"} gap="12" p="12" w="400px" h="auto">
+    <DecorativeBox flexDir={args.orientation === "vertical" ? "row" : "column"} gap="12" p="12" w="400px" h="auto">
       <DecorativeBox boxSize="64" visual="filled" />
       <Separator {...args} />
       <DecorativeBox boxSize="64" visual="filled" />
