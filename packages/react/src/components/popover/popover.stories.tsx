@@ -1,5 +1,4 @@
 import type { Story, StoryDefault } from "@ladle/react";
-import { ArrowTip } from "../arrow-tip";
 import { ButtonGroup } from "../button";
 import { Card } from "../card";
 import { Icon } from "../icon";
@@ -39,11 +38,6 @@ export const Base: Story<Popover.RootProps & { placement: "top" }> = (args) => {
         <Popover.Positioner>
           <Popover.Content>
             <Card.Root visual="elevated" radius="md" orientation="vertical" w="280px">
-              <Popover.Arrow>
-                <Popover.ArrowTip asChild>
-                  <ArrowTip />
-                </Popover.ArrowTip>
-              </Popover.Arrow>
               <Card.Body px="10" py="6">
                 <Popover.Description fontSize="13" lineHeight="sm">
                   The user will be unable to interact with the group and it's member. The action is irreversible.

@@ -1,5 +1,4 @@
 import type { Story, StoryDefault } from "@ladle/react";
-import { ArrowTip } from "../arrow-tip";
 import { IconButton } from "../button";
 import { Card } from "../card";
 import { Icon } from "../icon";
@@ -30,11 +29,6 @@ export const Base: Story<Tooltip.RootProps & { placement: string }> = (args) => 
       <Tooltip.Positioner>
         <Tooltip.Content maxW="320px" py="6" px="12" asChild>
           <Card.Root visual="elevated">
-            <Tooltip.Arrow>
-              <Tooltip.ArrowTip asChild>
-                <ArrowTip />
-              </Tooltip.ArrowTip>
-            </Tooltip.Arrow>
             <Kbd.Root size="xs" radius="xs" fontSize="13">
               <Kbd.Item fontSize="14">
                 D
