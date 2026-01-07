@@ -25,16 +25,17 @@ export const avatarRecipe = defineSlotRecipe({
     },
     image: styles.media.image,
     fallback: {
-      ...styles.typography.title,
-
-      display: "flex",
-      color: "var(--fg)",
-      alignItems: "center",
-      boxSize: "{sizes.full}",
-      justifyContent: "center",
-      fontSize: "var(--text-fs)",
-      backgroundColor: "inherit",
-      lineHeight: "{lineHights.none}",
+      "&:not([data-state=hidden])": {
+        ...styles.typography.title,
+        color: "var(--fg)",
+        alignItems: "center",
+        display: "inline-flex",
+        boxSize: "{sizes.full}",
+        justifyContent: "center",
+        fontSize: "var(--text-fs)",
+        backgroundColor: "inherit",
+        lineHeight: "{lineHeights.none}",
+      }
     },
   },
 
